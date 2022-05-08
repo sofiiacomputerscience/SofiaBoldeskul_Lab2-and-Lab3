@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="SofiaBoldeskul_Lab2.Views.ViewControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="450" 
+        Width="800"
+        Background="Bisque">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Margin ="10,10,575,9.4" Text="Enter your name: " FontSize="23" ></TextBlock>
+        <TextBox Grid.Row="0" Margin="230,10,93,9.4"  Text ="{Binding Name, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="1" Margin ="5,10.2,580,9.6" Text="Enter your surname: " FontSize="23" ></TextBlock>
+        <TextBox Grid.Row="1" Margin="230,10.6,93,9.8"  Text ="{Binding Surname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="2" Margin ="5,10.4,580,10.4" Text="Enter your email: " FontSize="23" ></TextBlock>
+        <TextBox Grid.Row="2" Margin="230,10.2,93,10.2"  Text ="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="3" Margin ="5,9.6,580,10.2" Text="Enter your birthday: " FontSize="23" ></TextBlock>
+        <DatePicker Grid.Row="3" Margin ="230,5.8,355,71" Text="Enter your name: " Grid.RowSpan="2" SelectedDate ="{Binding BirthDate , Mode = OneWayToSource,UpdateSourceTrigger=PropertyChanged}" ></DatePicker>
+        <Button Grid.Row="3"  FontSize="24" Background="Salmon" BorderThickness="2" Content="Proceed" Command="{Binding ProceedCommand}" Margin="325,60.6,324,10" Grid.RowSpan="2" />
+        <Label Grid.Row ="5"  FontSize="18" Content="Your name is: " Margin="0,0,0,18.6" ></Label>
+        <Label Grid.Row ="5" FontSize="18" Content="Your surname is: " Margin="0,36,0,29.2" Grid.RowSpan="2" ></Label>
+        <Label Grid.Row ="6" FontSize="18" Content="Your email is: " Margin="0,25.4,0,38.8" Grid.RowSpan="2" ></Label>
+        <Label Grid.Row ="7" FontSize="18" Content="Your birthday is: " Margin="0,9.8,0,49.4" Grid.RowSpan="2" ></Label>
+        <Label Grid.Row ="5" FontSize="18" Content="Your chinese sign is: " Margin="422,0,0,9.6" />
+
+        <Label Grid.Row ="6" FontSize="18" Content="Are you adult? : " Margin="422,25.4,17,38.8" Grid.RowSpan="2" />
+        <Label Grid.Row ="7" FontSize="18" Content="Is it your birthday today? : " Margin="422,12.8,10,2.8" />
+        <Label Grid.Row ="5" FontSize="18" Content="Your western sign is: " Margin="422,36,0,23.2" Grid.RowSpan="2" />
+        <Label Grid.Row ="7" FontSize="18"   Margin="0,9.8,0,49.4" Grid.RowSpan="2" ></Label>
+        <Label Grid.Row ="8" FontSize="18"   Margin="0,9.8,0,49.4" Grid.RowSpan="2" ></Label>
+        <TextBlock Grid.Row="5" Margin="123,7,435,12.6"  FontSize="18" Text ="{Binding Name, Mode=OneWay , UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="5" Margin="144,42,435,27.2"  FontSize="18" Text ="{Binding Surname, Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="6" Margin="123,30.4,456,38.8"  FontSize="18" Text ="{Binding Email, Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="7" Margin="144,14.8,435,3.8"  FontSize="18" Text ="{Binding BirthDateStr, Mode=OneWay , UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="5" Margin="618,6,30,13.6"  FontSize="18" Text ="{Binding SunSign, Mode=OneWay , UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="5" Margin="603,40,10,29.2"  FontSize="18" Text ="{Binding ChineseSign, Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="6" Margin="574,31.4,108,36.8"  FontSize="18" Text ="{Binding IsAdult, Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="7" Margin="663,18.8,10,49.4"  FontSize="18" Text ="{Binding IsBirthday, Mode=OneWay , UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+    </Grid>
+</UserControl>
